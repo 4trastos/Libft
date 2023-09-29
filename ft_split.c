@@ -6,7 +6,7 @@
 /*   By: davgalle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 13:44:26 by davgalle          #+#    #+#             */
-/*   Updated: 2023/09/28 14:53:33 by davgalle         ###   ########.fr       */
+/*   Updated: 2023/09/29 20:06:04 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,9 @@ int	ft_countc(char const *s, char c)
 	int	i;
 	int	x;
 
-	i = 1;
+	i = 0;
 	x = 0;
-	if (s[0] != c)
+	if (s[0] != '\0' && s[0] != c)
 		x = 1;
 	while (s[i] != '\0')
 	{
@@ -111,7 +111,7 @@ char	**ft_split(char const *s, char c)
 /*
 int main(void)
 {
-    const char *s = "-francinette-no-es---de--fiar-";
+    const char *s = "---francinette-no-es---de--fiar-";
     char **aux = ft_split(s, '-');
     
     if (aux)

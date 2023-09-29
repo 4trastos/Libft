@@ -24,7 +24,7 @@ fclean:			clean
 
 re:				fclean $(NAME)
 
-bonus:			$(OBJS) $(OBJS_BONUS)
-				ar rcs $(NAME) $(OBJS) $(OBJS_BONUS)
+bonus:			$(OBJS_BONUS)
+				ar rcs $(NAME) $(OBJS_BONUS)
 
 .PHONY:			all clean fclean re bonus
