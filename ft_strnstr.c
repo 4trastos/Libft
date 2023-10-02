@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 13:49:24 by davgalle          #+#    #+#             */
-/*   Updated: 2023/10/02 17:45:15 by davgalle         ###   ########.fr       */
+/*   Updated: 2023/10/02 18:44:07 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ char	*ft_strnstr(const char *str, const char *tofind, size_t len)
 /*
 int	main(void)
 {
-	char	str[]="hola pedazo de cola";
-	char	tofind[]="pe";
-	printf("%s", ft_strnstr(str, tofind, 10));
+	char	str[]="infrasonuak";
+	char	tofind[]="so";
+	printf("%s", ft_strnstr(str, tofind, 8));
 	return (0);
 }*/
