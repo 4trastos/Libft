@@ -6,39 +6,29 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 19:27:19 by davgalle          #+#    #+#             */
-/*   Updated: 2023/09/18 17:50:02 by davgalle         ###   ########.fr       */
+/*   Updated: 2023/10/03 16:45:23 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, const char *src)
-{
-	int	i;
-
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
-}
-
-size_t	ft_strlen(const char *str);
-
 char	*ft_strdup(const char *s1)
 {
+	size_t	i;
 	size_t	len;
 	char	*s2;
 
+	i = 0;
 	len = ft_strlen(s1);
 	s2 = (char *)malloc(len + 1);
-	if (s2 != NULL)
+	if (!s2)
+		return (NULL);
+	while (s1[i] != '\0')
 	{
-		ft_strcpy(s2, s1);
+		s2[i] = s1[i];
+		i++;
 	}
+	s2[i] = '\0';
 	return (s2);
 }
 /*
