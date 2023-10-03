@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 16:52:26 by davgalle          #+#    #+#             */
-/*   Updated: 2023/09/19 16:22:18 by davgalle         ###   ########.fr       */
+/*   Updated: 2023/10/03 15:11:41 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int	ft_count(const char *str, int i)
 {
+	int	num;
 	int	result;
-	int	digit;
 
 	result = 0;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		digit = str[i] - '0';
-		result = result * 10 + digit;
+		num = str[i] - '0';
+		result = result * 10 + num;
 		i++;
 	}
 	return (result);
@@ -55,7 +55,7 @@ int	ft_atoi(const char *str)
 /*
 int	main(void)
 {
-    char	str[]="   ---+--+1234ab567";
+    char	str[]="   -1234abcd345";
 	printf("%d", ft_atoi(str));
 	return (0);
 }*/
