@@ -6,7 +6,7 @@
 /*   By: davgalle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 17:07:35 by davgalle          #+#    #+#             */
-/*   Updated: 2023/09/19 20:18:12 by davgalle         ###   ########.fr       */
+/*   Updated: 2023/10/03 18:10:31 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	char	*sb;
 
-	if (s == NULL)
-		return (NULL);
 	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
 	if (len > ft_strlen(s) - start)
