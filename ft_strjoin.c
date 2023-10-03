@@ -6,51 +6,39 @@
 /*   By: davgalle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 19:07:36 by davgalle          #+#    #+#             */
-/*   Updated: 2023/09/26 11:39:59 by davgalle         ###   ########.fr       */
+/*   Updated: 2023/10/03 19:22:48 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_countchar(char const *s1, char *sb)
-{
-	int	z;
-
-	z = 0;
-	while (s1[z] != '\0')
-	{
-		sb[z] = s1[z];
-		z++;
-	}
-	return (z);
-}
-
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
-	int		j;
-	int		ds1;
-	int		ds2;
-	char	*sb;
+	char	*new;
+	size_t	i;
+	size_t	z;
 
-	ds1 = ft_strlen(s1);
-	ds2 = ft_strlen(s2);
-	sb = (char *)malloc(ds1 + ds2 + 1);
-	if (sb == NULL)
+	new = (char *)malloc(ft_strlen(s1) + ft_strlen (s2) +1);
+	if (!new)
 		return (NULL);
-	i = ft_countchar(s1, sb);
-	j = 0;
-	while (s2[j] != '\0')
+	i = 0;
+	while (s1[i] != '\0')
 	{
-		sb[i] = s2[j];
+		new[i] = s1[i];
 		i++;
-		j++;
 	}
-	sb[i] = '\0';
-	return (sb);
+	z = i;
+	i = 0;
+	while (s2[i] != '\0')
+	{
+		new[z] = s2[i];
+		z++;
+		i++;
+	}
+	new[z] = '\0';
+	return (new);
 }
-/*#include <string.h>
-#include <stdio.h>
+/*
 int	main(void)
 {
 	char	s1[]="mila esker";
