@@ -6,7 +6,7 @@
 /*   By: davgalle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 17:23:59 by davgalle          #+#    #+#             */
-/*   Updated: 2023/09/29 17:29:46 by davgalle         ###   ########.fr       */
+/*   Updated: 2023/10/05 16:55:12 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,9 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*aux;
-
-	if (lst == (void *)0)
-		return ;
-	aux = lst;
-	while (aux->next != (void *)0)
+	while (lst)
 	{
-		f(aux->content);
-		aux = aux->next;
+		f(lst->content);
+		lst = lst->next;
 	}
-	f(aux->content);
 }
