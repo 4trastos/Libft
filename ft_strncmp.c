@@ -6,7 +6,7 @@
 /*   By: davgalle <davgalle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:35:05 by davgalle          #+#    #+#             */
-/*   Updated: 2023/09/30 18:47:29 by davgalle         ###   ########.fr       */
+/*   Updated: 2023/09/30 19:54:04 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-/*int	main(void)
+/*
+int	main(void)
 {
 	const char s1[]="abbcc";
 	const char s2[]="abbcd";
