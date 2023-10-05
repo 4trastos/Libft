@@ -6,7 +6,7 @@
 /*   By: davgalle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 14:40:47 by davgalle          #+#    #+#             */
-/*   Updated: 2023/09/29 15:07:29 by davgalle         ###   ########.fr       */
+/*   Updated: 2023/10/05 13:34:12 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ int	ft_lstsize(t_list *lst)
 	t_list	*aux;
 
 	i = 1;
-	if (lst == NULL)
+	if (!lst)
 		return (0);
 	aux = lst;
-	while (aux->next != (void *)0)
+	while (aux->next != NULL)
 	{
 		aux = aux->next;
 		i++;
