@@ -6,27 +6,27 @@
 /*   By: davgalle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 19:47:40 by davgalle          #+#    #+#             */
-/*   Updated: 2023/09/29 15:27:22 by davgalle         ###   ########.fr       */
+/*   Updated: 2023/10/05 20:09:30 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static unsigned int	ft_numlen(int n)
+unsigned int	ft_numlen(int n)
 {
-	unsigned int	count;
+	unsigned int	i;
 
-	count = 0;
+	i = 0;
 	if (n == 0)
 		return (1);
 	if (n < 0)
-		count++;
+		i++;
 	while (n != 0)
 	{
-		n /= 10;
-		count++;
+		n = n / 10;
+		i++;
 	}
-	return (count);
+	return (i);
 }
 
 char	*ft_itoa(int n)
@@ -37,7 +37,7 @@ char	*ft_itoa(int n)
 
 	len = ft_numlen(n);
 	result = (char *)malloc((len + 1) * sizeof(char));
-	if (result == NULL)
+	if (!result)
 		return (NULL);
 	if (n < 0)
 	{
