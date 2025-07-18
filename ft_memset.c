@@ -26,11 +26,4 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
-/*
-int	main(void)
-{
-	 char str[] = "Hello, World!";
-	 printf("%s", ft_memset(str, '.', 8));	 
-	 return (0);
-	 }*/
-//Sustituir un caracter (value) "num" veces dentro de una string.
+

@@ -12,37 +12,22 @@
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
-{
-	unsigned char	*d;
-	unsigned char	*s;
-	size_t			i;
+void *ft_memmove(void *dst, const void *src, size_t len) {
+    unsigned char *d = dst;
+    const unsigned char *s = src;
 
-	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
-	if (dst == src || len == 0)
-		return (dst);
-	i = 0;
-	if (d < s)
-	{
-		ft_memcpy(d, s, len);
-	}
-	else
-	{
-		i = len;
-		while (i > 0)
-		{
-			d[i - 1] = s[i - 1];
-			i--;
-		}	
-	}
-	return (dst);
+    if (dst == src || len == 0)
+        return (dst);
+
+    if (d < s) {
+        // Copia hacia adelante (origen < destino)
+        for (size_t i = 0; i < len; i++)
+            d[i] = s[i];
+    } else {
+        // Copia hacia atrás (origen >= destino)
+        for (size_t i = len; i > 0; i--)
+            d[i-1] = s[i-1];
+    }
+    return (dst);
 }
-/*
-int	main(void)
-{
-	char	src[]="marigorringo eta kilkerrak";
-	char	dst[]="abcdefghijklm";
-	printf("%s", ft_memmove(dst, src, 13));
-			return (0);
-}*/
+
