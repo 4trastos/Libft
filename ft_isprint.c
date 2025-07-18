@@ -19,13 +19,4 @@ int	ft_isprint(int c)
 	else
 		return (0);
 }
-/*
-int	main(void)
-{
-	unsigned char	c;
 
-	c = 'D';
-	printf("%d", ft_isprint('D'));
-
-	return (0);
-}*/
