@@ -12,39 +12,37 @@
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t      ft_strlcat (char *dst, const char *src, size_t len)
 {
-	size_t	i;
-	size_t	j;
-	size_t	dlen;
-	size_t	slen;
+    size_t  dst_len;
+    size_t  src_len;
+    size_t  i;
 
-	i = 0;
-	j = 0;
-	while (dst[j] != '\0')
-		j++;
-	dlen = j;
-	slen = ft_strlen(src);
-	if (dstsize == 0 || dstsize <= dlen)
-		return (slen + dstsize);
-	while (src[i] != '\0' && i < dstsize - dlen -1)
-	{
-		dst[j] = src[i];
-		i++;
-		j++;
-	}
-	dst[j] = '\0';
-	return (dlen + slen);
+    dst_len = ft_strlen(dst);
+    src_len = ft_strlen(src);
+    if (len <= dst_len)
+        return(src_len + len);
+    i = 0;
+    while (src[i] != '\0' && (dst_len + i) < (len - 1))
+    {
+        dst[dst_len + i] = src[i];
+        i++;
+    }
+    dst[dst_len + i] = '\0';
+    return (dst_len + src_len);
 }
 /*
-int main(void)
-{
-	char	src[]= "david es";
-	char	dest[]= "un tipo molon";
-	ft_strlcat(dest, src, 7);
+char dst[10] = "Hello";
+ft_strlcat(dst, " World", 10);
+// Resultado: "Hello Wor" (9 chars + null terminator)
+// Return: 11 (5 + 6)
 
-	int	x = ft_strlcat(dest, src, 7);
+char buffer[10] = "Hello";
+size_t result;
 
-	printf("%d", x);
-	return 0;
+result = ft_strlcat(buffer, " World", 10);
+// buffer = "Hello Wor", result = 11
+
+result = ft_strlcat(buffer, " World", 5);
+// buffer = "Hello", result = 11 (no modifica dst)
 }*/
